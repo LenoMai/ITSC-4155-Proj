@@ -1,0 +1,26 @@
+const express = require('express');
+const path = require('path');
+const app = express();
+const port = 4000;
+
+// const taskRoutes = require('./routes/taskRoutes')
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static('public'));
+
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'public', 'signup.html'));
+// });
+
+// app.get('/messages', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'public', 'messages.html'));
+// });
+
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+  });
+
+module.exports = app;
+
